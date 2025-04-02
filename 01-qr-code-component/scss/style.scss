@@ -1,0 +1,62 @@
+@use "variables" as *;
+@use "funtion" as *;
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: map-get($color, slate-300);
+  height: 97vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  width: 320px;
+  background-color: map-get($color, white);
+  border-radius: 20px;
+  padding: map-get($spaceing, 200) map-get($spaceing, 200)
+    map-get($spaceing, 500) map-get($spaceing, 200);
+  margin: 0 auto;
+  text-align: center;
+
+  .qr_image {
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .text {
+    padding: 0 map-get($spaceing, 200);
+
+    h1 {
+      @include text-preset-1;
+      color: map-get($color, slate-900);
+      margin-top: map-get($spaceing, 300);
+      margin-bottom: map-get($spaceing, 200);
+    }
+
+    p {
+      @include text-preset-2;
+      color: map-get($color, slate-500);
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    color: hsl(228, 45%, 44%);
+  }
+}
